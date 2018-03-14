@@ -4,10 +4,9 @@
       <section
           v-for="(item,index) in order" 
             :index="index" 
-            @click="gotoAddress(index,item.toPath);nowIndex = -1;"
+            @click="gotoAddress(index,item.toPath);"
             v-bind:class="{
                 guid_item: hasClass, 
-                active: nowIndex = -1 ? item.isChoose : !item.isChoose
             }"
           >
         {{item.name}}
@@ -21,31 +20,31 @@ export default {
     return {
       isActive: true,
       hasClass: true,
-      nowIndex:-2,
-      order:[
+      nowIndex: -2,
+      order: [
         {
-          name: '最右',
-          toPath: '/home',
+          name: "最右",
+          toPath: "/home",
           isChoose: false
         },
         {
-          name: '跟拍',
-          toPath: '/photo',          
+          name: "跟拍",
+          toPath: "/photo",
           isChoose: false
         },
         {
-          name: '话题',
-          toPath: '/artical',
+          name: "话题",
+          toPath: "/artical",
           isChoose: false
         },
         {
-          name: '消息',
-          toPath: '/message',
+          name: "消息",
+          toPath: "/message",
           isChoose: false
         },
         {
-          name: '我的',
-          toPath: '/profile',
+          name: "我的",
+          toPath: "/profile",
           isChoose: false
         }
       ]
@@ -53,30 +52,14 @@ export default {
   },
 
   methods: {
-    gotoAddress(index,path) {
+    gotoAddress(index, path) {
       // 传入需要跳转路由名称
       this.$router.push(path); // 跳转到指定路由
-      this.order[index].isChoose = this.isActive;   
-      // console.log(index,this.order)     
-    }
-  },
-  watch:{
-      changeCard:function(newVal,oldVal){
-        // console.log("new:",newVal);
-        // console.log("old:",oldVal)
-      }
+      // this.order[index].isChoose = this.isActive;
+      this.nowIndex = index;
     },
-    computed:{
-      changeCard:function(){
-        // let _this = this;
-        // _this.order.forEach(function(orders){
-        //   orders.isChoose = false;
-        // })
-        // return this.order;
 
-        
-      }
-    }
+  }
 };
 </script>
 
