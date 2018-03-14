@@ -1,5 +1,5 @@
 <template>
-<footer>
+<footer>111
     <section id="foot_guid" >
       <section
           v-for="(item,index) in order" 
