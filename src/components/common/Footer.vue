@@ -29,12 +29,12 @@ export default {
         },
         {
           name: "跟拍",
-          toPath: "/photo",
+          toPath: "/pat",
           isChoose: false
         },
         {
           name: "话题",
-          toPath: "/artical",
+          toPath: "/topic",
           isChoose: false
         },
         {
@@ -65,11 +65,13 @@ export default {
 
 <style>
 footer {
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
-  left: 0;
+  left: 0; */
   width: 100%;
   height: 3.125rem;
+  background-color: #fff;
+  z-index: 10;
 }
 .active {
   color: #8684f5;

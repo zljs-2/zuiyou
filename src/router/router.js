@@ -19,7 +19,7 @@ export default new Router({
             name: 'Home',
             component: Home
         },
-        {
+        { 
             path: '/pat',
             name: 'Pat',
             component: Pat
