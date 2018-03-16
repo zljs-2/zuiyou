@@ -45,6 +45,7 @@ body {
   height: 3.125rem;
   line-height: 3.125rem;
   background-color: #d8d8d8;
+  
 }
 .art {
   -webkit-box-flex: 1;
@@ -55,6 +56,7 @@ body {
 
   overflow: auto; /* winphone8和android4+ */
   -webkit-overflow-scrolling: touch; /* ios5+ */
+  
 }
 
 /* ============================================================

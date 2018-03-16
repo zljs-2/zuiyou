@@ -1,8 +1,5 @@
-<template>
-     
-          <footerButton></footerButton>
-     
-  
+<template> 
+    <footerButton></footerButton>
 </template>
 
 <script>
