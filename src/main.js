@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
+import iconfont from './iconfont/iconfont'
 // import footerButton from '@/components/common/Footer'
 Vue.config.productionTip = false
 

@@ -36,24 +36,15 @@ body {
   height: 100%;
 }
 
-#home {
-  width: 100%;
-  height: 100%;
-}
-.head,
-.foot {
-  height: 3.125rem;
-  line-height: 3.125rem;
-  background-color: #d8d8d8;
-  
-}
+
+
 .art {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
   width: 100%;
-
+    
   overflow: auto; /* winphone8和android4+ */
   -webkit-overflow-scrolling: touch; /* ios5+ */
   

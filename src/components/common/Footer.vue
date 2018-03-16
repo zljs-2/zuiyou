@@ -4,12 +4,22 @@
       <section
           v-for="(item,index) in order" 
             :index="index" 
-            @click="gotoAddress(index,item.toPath);"
+            @click="gotoAddress(item.toPath);"
             v-bind:class="{
                 guid_item: hasClass, 
             }"
           >
-        {{item.name}}
+          <section class="icon_name">
+            <section class="guid_item_icon flex-1 flex-align-center">
+              <svg class="icon" aria-hidden="true">
+                <use :xlink:href="item.icon"></use>
+              </svg>
+            </section>
+            <section class="guid_item_name  flex-align-center">
+              {{item.name}}
+            </section>
+          </section>
+          
       </section>
     </section>
     </footer>
@@ -23,26 +33,31 @@ export default {
       nowIndex: -2,
       order: [
         {
+          icon: "#icon-shuaxin",
           name: "最右",
           toPath: "/home",
           isChoose: false
         },
         {
+          icon: "#icon-zhaoxiangjib",
           name: "跟拍",
           toPath: "/pat",
           isChoose: false
         },
         {
+          icon: "#icon-huojian",
           name: "话题",
           toPath: "/topic",
           isChoose: false
         },
         {
+          icon: "#icon-shouye",
           name: "消息",
           toPath: "/message",
           isChoose: false
         },
         {
+          icon: "#icon-wodeweixuanzhong",
           name: "我的",
           toPath: "/profile",
           isChoose: false
@@ -52,13 +67,10 @@ export default {
   },
 
   methods: {
-    gotoAddress(index, path) {
+    gotoAddress(path) {
       // 传入需要跳转路由名称
       this.$router.push(path); // 跳转到指定路由
-      // this.order[index].isChoose = this.isActive;
-      this.nowIndex = index;
-    },
-
+    }
   }
 };
 </script>
@@ -77,7 +89,7 @@ footer {
   color: #8684f5;
 }
 #foot_guid {
-  height: 100%;
+  height: 3.125rem;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -92,5 +104,42 @@ footer {
   flex-shrink: 1;
   flex-basis: auto;
   justify-content: center;
+}
+.icon_name {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  line-height: 100% ;
+  width: 70%;
+  margin: 0 auto;
+}
+.guid_item_icon {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1.625rem;
+  padding: .25rem /* 4/16 */;
+}
+.guid_item_name {
+  font-size: .625rem /* 10/16 */;
+  height: 0.875rem;
+  line-height: 0.875rem;
+}
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  
+}
+.flex-align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  
 }
 </style>
