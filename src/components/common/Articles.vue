@@ -12,7 +12,6 @@
 </template>
 
 <script>
-// import timg from "@/assets/timg.jpg";
 import axios from "@/axios/api.js";
 import ArtCell from "./ArtCell";
 export default {

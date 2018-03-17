@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import headTop from "./common/Header";
-import articles from "./common/Articles";
-import footerButton from "./common/Footer";
+import headTop from "../common/Header";
+import articles from "../common/Articles";
+import footerButton from "../common/Footer";
 
 export default {
   data() {
