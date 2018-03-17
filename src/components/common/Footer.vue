@@ -7,6 +7,7 @@
             @click="gotoAddress(item.toPath);"
             v-bind:class="{
                 guid_item: hasClass, 
+                active: item.isChoose
             }"
           >
           <section class="icon_name">
@@ -19,7 +20,6 @@
               {{item.name}}
             </section>
           </section>
-          
       </section>
     </section>
     </footer>
@@ -30,7 +30,7 @@ export default {
     return {
       isActive: true,
       hasClass: true,
-      nowIndex: -2,
+      nowIndex: 0,
       order: [
         {
           icon: "#icon-shuaxin",
@@ -67,11 +67,17 @@ export default {
   },
 
   methods: {
-    gotoAddress(path) {
+    gotoAddress: function(path) {
       // 传入需要跳转路由名称
       this.$router.push(path); // 跳转到指定路由
-    }
-  }
+    },
+    // chooseTag: function(index) {
+    //   console.log(this.order[index].isChoose)
+    //   this.order[index].isChoose = this.isActive;
+    //   console.log(this.order[index].isChoose)
+    // }
+  },
+
 };
 </script>
 

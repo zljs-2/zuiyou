@@ -1,19 +1,26 @@
 <template>
     <article class="art_item">
         <section class="user">
-                <span class="uPhoto  flex-align-start">
-                    <img :src="articleCell.uPhoto" alt="">
-                </span>
-                <span class="uName flex-1 flex-align-start">
-                    {{articleCell.uName}}
-                </span>
+            <span class="uPhoto  flex-align-start">
+                <img :src="articleCell.uPhoto" alt="">
+            </span>
+            <span class="uName flex-1 flex-align-start">
+                {{articleCell.uName}}
+            </span>
         </section>
         <section class="art_content ">
             <section class="art_title flex-1" @click="">
                 <p>{{articleCell.artTitle}}</p>
             </section>
             <section class="art_img">
-                <img :src="articleCell.artImg" alt="">
+                <section class="img_wrap" v-for="(artImg,key) in articleCell.artImg"
+                    :class="{
+                        flex_grow: (articleCell.artImg.length % 3) == 0 ? flag : !flag,
+                        oneImg: articleCell.artImg.length == 1 ? flag : !flag,
+                        twoImgs: articleCell.artImg.length == 2 ? flag : !flag
+                    }">
+                    <img  :src="artImg" alt="" class="img">
+                </section> 
             </section>
         </section>
         <section class="art_pat">
@@ -23,9 +30,21 @@
         </section>
         <section class="art_comment_wrap" @click="">
             <section class="art_comment">
-                <span class="art_commentContent">
-                    {{articleCell.artComment.Comment}}
-                </span>
+                <section >
+                    <span class="art_commentContent">
+                        {{articleCell.artComment.Comment}}
+                    </span>
+                    <section class="art_img">
+                        <section class="img_wrap" v-for="(commentImg,key) in articleCell.artComment.CommentImg"
+                            :class="{
+                                flex_grow: (articleCell.artComment.CommentImg.length % 3) == 0 ? flag : !flag,
+                                oneImg: articleCell.artComment.CommentImg.length == 1 ? flag : !flag,
+                                twoImgs: articleCell.artComment.CommentImg.length == 2 ? flag : !flag
+                            }">
+                        <img  :src="commentImg" alt="" class="img">
+                    </section>
+                </section>
+                </section>
                 <section class="comment_praise_wrap">
                     <span class="comment_praise">
                         <svg class="icon" aria-hidden="true">
@@ -83,7 +102,9 @@ export default {
 
   computed: {},
   data() {
-    return {};
+    return {
+      flag: true
+    };
   },
   methods: {
     gotoAddress(path) {
@@ -163,11 +184,48 @@ export default {
   line-height: 1.25rem;
   margin: 0.625rem;
 }
-.art_content .art_img > img {
+.art_img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   box-sizing: border-box;
-  width: 100%;
+  max-width: 100%;
+  min-width: 6.25rem;
+  min-height: 6.25rem;
+}
+.flex_grow {
+  flex-grow: 1;
+}
+.img_wrap {
+  order: 1;
+  box-sizing: border-box;
+  width: 6.25rem;
+  height: 6.25rem;
+  margin: 0.1875rem;
+  overflow: hidden;
+}
+.art_img .img {
+  box-sizing: border-box;
+  width: 12.5rem;
   height: 12.5rem;
 }
+.art_img .oneImg {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}
+.art_img .twoImgs {
+  flex-grow: 1;
+  box-sizing: border-box;
+  height: 9.375rem;
+}
+/*.art_content .art_img > moreImgs {
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 6.25rem;
+  height: 6.25rem;
+} */
 .art_pat {
   text-align: left;
   width: auto;
