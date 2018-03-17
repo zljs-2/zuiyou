@@ -112,7 +112,7 @@ footer {
   -webkit-box-orient: vertical;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  line-height: 100% ;
+  line-height: 100%;
   width: 70%;
   margin: 0 auto;
 }
@@ -120,10 +120,10 @@ footer {
   box-sizing: border-box;
   width: 100%;
   font-size: 1.625rem;
-  padding: .25rem /* 4/16 */;
+  padding: 0.25rem 0.375rem 0.25rem 0.625rem;
 }
 .guid_item_name {
-  font-size: .625rem /* 10/16 */;
+  font-size: 0.625rem;
   height: 0.875rem;
   line-height: 0.875rem;
 }
@@ -133,13 +133,11 @@ footer {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  
 }
 .flex-align-center {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  
 }
 </style>

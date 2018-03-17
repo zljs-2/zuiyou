@@ -7,6 +7,8 @@ import iconfont from './iconfont/iconfont'
 // import footerButton from '@/components/common/Footer'
 Vue.config.productionTip = false
 
+require('@/mock/articleList.js')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

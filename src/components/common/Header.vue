@@ -24,9 +24,9 @@ header {
   top: 0;
   left: 0; */
   width: 100%;
-  height: 3.75rem ;
-  padding: .625rem  .3125rem  ;
-  margin-bottom: .625rem ;
+  height: 3.75rem;
+  padding: 0.625rem 0.3125rem;
+  margin-bottom: 0.625rem;
   box-sizing: border-box;
   background-color: #fff;
 }
@@ -35,22 +35,22 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   position: relative;
-  width:100%;
-  height: 1.5rem /* 24/16 */;
+  width: 100%;
+  height: 1.5rem;
 }
 #search_icon {
   position: absolute;
-  left: .3125rem /* 5/16 */;
+  left: 0.3125rem;
   top: 0;
   display: block;
-  width: 1.875rem /* 30/16 */;
-  height: 1.5rem /* 24/16 */;
+  width: 1.875rem;
+  height: 1.5rem;
   line-height: 1.625rem;
   text-align: center;
   color: rgb(160, 159, 159);
 }
 .search_edit {
-  line-height: 1.625rem /* 26/16 */;
+  line-height: 1.625rem;
   order: 0;
   flex-shrink: 1;
   flex-basis: auto;
@@ -58,21 +58,25 @@ header {
   margin: 0 5px;
 }
 #search {
-  flex-grow: 5;
-  font-size: .75rem /* 12/16 */;
-  padding: .1875rem /* 3/16 */ 0  .1875rem  1.875rem /* 30/16 */;
-  border-radius: .375rem /* 6/16 */;
+  /* flex-grow: 5; */
+  font-size: 0.75rem;
+  padding: 0.1875rem 0 0.1875rem 1.875rem;
+  border-radius: 0.375rem;
   border: 1px solid #e6e0e0;
   background-color: #f1f1f1;
   outline: none;
+
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 #edit {
   text-align: center;
-  line-height: 1.625rem /* 26/16 */;
-  display: inline-block;
-  flex-grow: 1;
-  font-size: 1.375rem /* 22/16 */;
+  line-height: 1.625rem;
+  font-size: 1.375rem;
   color: dodgerblue;
+  width: 2.5rem /* 40/16 */;
 }
 </style>
 
