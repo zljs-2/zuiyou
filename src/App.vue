@@ -28,13 +28,7 @@ export default {
   margin-top: 60px;
   height: 100%;
 }
-#home {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+
 .head,
 .foot {
   height: 3.125rem;

@@ -1,26 +1,22 @@
 <template>
-  <section id="home" class="flex flex-v">
-      <headTop></headTop>
-      <section class=" art flex-1 flex-align-center flex-pack-center flex-pack-justify">
-        <articles></articles>
-      </section>
-      <footerButton></footerButton>
-  </section>
+    <section class="artWrap flex flex-v">
+        <ArtHeader></ArtHeader>
+        <section class=" artBody flex-1 flex-align-center flex-pack-center flex-pack-justify">
+            <ArtMain></ArtMain>
+        </section>
+        <ArtFooter></Artfooter>
+    </section>
 </template>
 
 <script>
-import headTop from "../common/Header";
-import articles from "../common/Articles";
-import footerButton from "../common/Footer";
-
+import ArtHeader from "./artComponents/artHeader";
+import ArtMain from "./artComponents/artMain";
+import ArtFooter from "./artComponents/artFooter";
 export default {
-  data() {
-    return {};
-  },
   components: {
-    headTop,
-    articles,
-    footerButton
+    ArtHeader,
+    ArtMain,
+    ArtFooter
   }
 };
 </script>
@@ -36,7 +32,7 @@ body {
   height: 100%;
 }
 
-#home {
+.artWrap {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -45,7 +41,7 @@ body {
   justify-content: space-between;
 }
 
-.art {
+.artBody {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -113,5 +109,5 @@ flex-pack-justify：子元素两端对齐
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-} 
+}
 </style>

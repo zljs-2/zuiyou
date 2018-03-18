@@ -34,30 +34,35 @@ export default {
       order: [
         {
           icon: "#icon-shuaxin",
+          chooseIcon:'',
           name: "最右",
           toPath: "/home",
           isChoose: false
         },
         {
-          icon: "#icon-zhaoxiangjib",
+          icon: "#icon-tupian1",
+          chooseIcon:'icon-tupiantianchong',
           name: "跟拍",
           toPath: "/pat",
           isChoose: false
         },
         {
           icon: "#icon-huojian",
+          chooseIcon:'icon-huojian1',
           name: "话题",
           toPath: "/topic",
           isChoose: false
         },
         {
-          icon: "#icon-shouye",
+          icon: "#icon-xiaoxi",
+          chooseIcon:'icon-xiaoxi1',
           name: "消息",
           toPath: "/message",
           isChoose: false
         },
         {
           icon: "#icon-wodeweixuanzhong",
+          chooseIcon:'icon-wodexuanzhong',
           name: "我的",
           toPath: "/profile",
           isChoose: false

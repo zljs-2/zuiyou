@@ -7,6 +7,7 @@ const produceArtList = function() {
     let articles = [];
     for (let i = 0; i < 10; i++) {
         let newArticleObject = {
+            artIndex: i,
             artTitle: Random.csentence(5, 30), //  Random.csentence( min, max )
             uPhoto: Random.dataImage('100x100', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
             artImg: [], 
@@ -16,12 +17,18 @@ const produceArtList = function() {
             artComment:{
                 Comment: Random.csentence(2,40),
                 CommentImg: [],
-                CommentPraiseNum: Random.natural( 1, 30000 )
+                CommentPraiseNum: Random.natural( 1, 30000 ),
+                CommentPraiseUpIcon:'#icon-iconset0436',
+                CommentPraiseDownIcon:'#icon-iconset0435'
             },
             artBar: {
                 shareNum: Random.natural( 1, 1000 ),
+                shareIcon: '#icon-msnui-share',
                 artCommentNum: Random.natural( 1, 20000 ),
-                artPraiseNum: Random.natural( 1, 30000 )
+                commentIcon: '#icon-xiaoxi2',
+                artPraiseNum: Random.natural( 1, 30000 ),
+                artPraiseUpIcon: '#icon-web-icon-1',
+                artPraiseDownIcon: '#icon-web-icon-'
             }
         }
         let  imgNum= Random.natural( 1, 9 );

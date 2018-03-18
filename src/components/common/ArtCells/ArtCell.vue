@@ -8,7 +8,7 @@
                 {{articleCell.uName}}
             </span>
         </section>
-        <section class="art_content " @click="gotoAddress('/home/art')">
+        <section class="art_content " @click="gotoAddress('/art')">
             <section class="art_title flex-1" >
                 <p>{{articleCell.artTitle}}</p>
             </section>
@@ -27,20 +27,20 @@
         <section class="art_bar" @click="">
             <section class="art_shareNum art_bar_item">
                 <svg class="icon art_bar_icon" aria-hidden="true">
-                    <use xlink:href="#icon-msnui-share"></use>
+                    <use :xlink:href="articleCell.artBar.shareIcon"></use>
                 </svg>
                 {{articleCell.artBar.shareNum}}
             </section>
             <section class="art_commentNum art_bar_item" @click="gotoAddress('/home/art')">
                 <svg class="icon art_bar_icon" aria-hidden="true">
-                    <use xlink:href="#icon-xiaoxi"></use>
+                    <use :xlink:href="articleCell.artBar.commentIcon"></use>
                 </svg>
                 {{articleCell.artBar.artCommentNum}}
             </section>
             <section class="art_praise_wrap art_bar_item">
                 <span class="art_praise art_praiseUp">
                     <svg class="icon art_bar_icon" aria-hidden="true">
-                        <use xlink:href="#icon-web-icon-1"></use>
+                        <use :xlink:href="articleCell.artBar.artPraiseUpIcon"></use>
                     </svg>
                 </span>
                 <span class="art_praiseNum">
@@ -48,7 +48,7 @@
                 </span>
                 <span class="art_praise art_praiseDown">
                     <svg class="icon art_bar_icon" aria-hidden="true">
-                        <use xlink:href="#icon-web-icon-"></use>
+                        <use :xlink:href="articleCell.artBar.artPraiseDownIcon"></use>
                     </svg>
                 </span>
             </section>

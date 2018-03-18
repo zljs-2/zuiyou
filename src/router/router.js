@@ -5,6 +5,7 @@ import Pat from '@/components/pat/Pat'
 import Topic from '@/components/topic/Topic'
 import Message from '@/components/message/Message'
 import Profile from '@/components/profile/Profile'
+import Art from '@/components/perArt/Art'
 
 Vue.use(Router)
 
@@ -36,6 +37,10 @@ export default new Router({
             path: '/profile',
             name: 'Profile',
             component: Profile
+        }, {
+            path: '/art',
+            name: 'Art',
+            component: Art
         }
     ]
 })

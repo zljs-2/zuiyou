@@ -36,6 +36,7 @@ export default {
   min-height: 6.25rem;
   margin: 0 auto;
   width: 100%;
+  
 }
 .flex_grow {
   flex-grow: 1;

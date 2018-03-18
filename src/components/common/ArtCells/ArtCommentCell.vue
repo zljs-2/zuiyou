@@ -1,5 +1,5 @@
 <template>
-  <section class="art_comment_wrap" @click="gotoAddress('/home/art')">
+  <section class="art_comment_wrap" @click="gotoAddress('/art')">
             <section class="art_comment">
                 <section >
                     <span class="art_commentContent">
@@ -12,7 +12,7 @@
                 <section class="comment_praise_wrap">
                     <span class="comment_praise">
                         <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-tubiao103"></use>
+                            <use :xlink:href="articleCommentCell.CommentPraiseUpIcon"></use>
                         </svg>
                     </span>
                     <span class="comment_praiseNum">
@@ -20,7 +20,7 @@
                     </span>
                     <span class="comment_tread">
                         <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-tubiao104"></use>
+                            <use :xlink:href="articleCommentCell.CommentPraiseDownIcon"></use>
                         </svg>
                     </span>
                 </section>
