@@ -1,5 +1,5 @@
 <template>
-  <section class="art_comment_wrap" @click="gotoAddress('/art')">
+  <section class="art_comment_wrap" @click="gotoAddress('/art?id='+articleCommentCell.artIndex)">
             <section class="art_comment">
                 <section >
                     <span class="art_commentContent">

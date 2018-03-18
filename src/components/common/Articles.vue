@@ -32,7 +32,7 @@ export default {
       this.$router.push(path); // 跳转到指定路由
     },
     getArtList: function() {
-      axios.zuiyou_artList('/home/artList','type=top&key=123456')
+      axios.zuiyou_artList('/home/artList')
         .then(res => {
           console.log(res);
           this.articlesList = res.articles;
@@ -54,16 +54,6 @@ export default {
   width: 100%;
   box-sizing: border-box;
 }
-#art .art_item {
-  /* background-color: ghostwhite; */
-  width: 100%;
-  margin: 0 auto;
-  border-bottom: 0.5rem solid #ecebeb;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-}
+
 
 </style>

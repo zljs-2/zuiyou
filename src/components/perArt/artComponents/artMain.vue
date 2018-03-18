@@ -1,37 +1,41 @@
 <template>
   <section class="art_main">
-      <ArtCell
-        :articleCell="articlesList"
-        ></ArtCell>
+    <section>
+      <ArtContent :artContentCell="articleCell" ></ArtContent>
+      <ArtBar :artBarCell="articleCell.artBar"></ArtBar>
+    </section>
+      
   </section>
 </template>
 
 <script>
-import axios from "@/axios/api.js";
-import ArtCell from "@/components/common/ArtCells/ArtCell";
+import ArtContent from "@/components/common/ArtCells/ArtContent";
+import ArtBar from "@/components/common/ArtCells/ArtBar";
 export default {
   components: {
-    ArtCell
+    ArtContent,
+    ArtBar
   },
-  data(){
-      return {
-          articlesList:{}
-      }
+  props:{
+    articleCell:Object
   },
-created() {
-    this.getArtList();
-  },
-  methods: {
-    getArtList: function() {
-      axios.zuiyou_artList("/home/artList", "type=top&key=123456").then(res => {
-        console.log("res:",res);
-        this.articlesList = res.articles;
-      });
-    }
+  data() {
+    return {
+      articlesList: {}
+    };
   }
 };
 </script>
 
 <style>
-
+.art_main {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 0.5rem solid #ecebeb;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+}
 </style>

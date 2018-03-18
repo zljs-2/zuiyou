@@ -2,13 +2,15 @@
     <section class="artWrap flex flex-v">
         <ArtHeader></ArtHeader>
         <section class=" artBody flex-1 flex-align-center flex-pack-center flex-pack-justify">
-            <ArtMain></ArtMain>
+            <ArtMain :articleCell="articlesList"></ArtMain>
         </section>
         <ArtFooter></Artfooter>
     </section>
 </template>
 
 <script>
+import axios from "@/axios/api.js";
+
 import ArtHeader from "./artComponents/artHeader";
 import ArtMain from "./artComponents/artMain";
 import ArtFooter from "./artComponents/artFooter";
@@ -17,6 +19,22 @@ export default {
     ArtHeader,
     ArtMain,
     ArtFooter
+  },
+  data(){
+    return {
+      articlesList:{}
+    }
+  },
+  created() {
+    this.getArt();
+  },
+  methods: {
+    getArt: function() {
+      axios.zuiyou_art("/art?id=1").then(res => {
+        console.log("res:", res.articles[0]);
+        this.articlesList = res.articles[0];
+      });
+    }
   }
 };
 </script>
@@ -38,7 +56,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .artBody {
