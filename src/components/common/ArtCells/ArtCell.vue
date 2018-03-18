@@ -1,11 +1,8 @@
 <template>
     <article class="art_item">
-        <ArtContent 
-            :artContentCell="articleCell"></ArtContent>
-        <ArtCommentCell 
-            :articleCommentCell="articleCell.artComment"></ArtCommentCell>
-        <ArtBar 
-            :artBarCell="articleCell.artBar"></ArtBar>
+        <ArtContent :artContentCell="articleCell"></ArtContent>
+        <ArtCommentCell :articleCommentCell="articleCell.artComment"></ArtCommentCell>
+        <ArtBar :artBarCell="articleCell.artBar"></ArtBar>
     </article>
 </template>
 
@@ -15,7 +12,7 @@ import ArtBar from './ArtBar'
 import ArtCommentCell from "./ArtCommentCell"
 import ImgCell from './ImgCell'
 export default {
-  name: "ArtCell",
+  // name: "ArtCell",
   props: {
     articleCell: Object
   },

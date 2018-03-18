@@ -30,9 +30,10 @@ export default {
   },
   methods: {
     getArt: function() {
-      axios.zuiyou_art("/art?id=1").then(res => {
-        console.log("res:", res.articles[0]);
-        this.articlesList = res.articles[0];
+      console.log("this.$router",this.$router.history.current)
+      axios.zuiyou_art(this.$router.history.current.fullPath).then(res => {
+        console.log("res:", res[0]);
+        this.articlesList = res[0];
       });
     }
   }

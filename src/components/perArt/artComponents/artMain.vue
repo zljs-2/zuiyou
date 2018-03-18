@@ -17,12 +17,11 @@ export default {
     ArtBar
   },
   props:{
-    articleCell:Object
-  },
+    articleCell: Object
+  }, 
+    computed: {},
   data() {
-    return {
-      articlesList: {}
-    };
+    return {}
   }
 };
 </script>
