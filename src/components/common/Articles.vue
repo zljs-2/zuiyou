@@ -2,10 +2,10 @@
   <section id="art_warp">
       <section id="art">
           <article v-for="(item,index) in articlesList" :index="index">
-            <art-cell 
+            <ArtCell
               :articleCell="item"
               :index="index">
-            </art-cell>
+            </ArtCell>
           </article>
       </section>
   </section>
@@ -13,7 +13,7 @@
 
 <script>
 import axios from "@/axios/api.js";
-import ArtCell from "./ArtCell";
+import ArtCell from "./ArtCells/ArtCell";
 export default {
   components: {
     ArtCell

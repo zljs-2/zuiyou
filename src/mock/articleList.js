@@ -9,7 +9,7 @@ const produceArtList = function() {
         let newArticleObject = {
             artTitle: Random.csentence(5, 30), //  Random.csentence( min, max )
             uPhoto: Random.dataImage('100x100', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
-            artImg: [], // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
+            artImg: [], 
             uName: Random.cname(), // Random.cname() 随机生成一个常见的中文姓名
             date: Random.date() + ' ' + Random.time(), // Random.date()指示生成的日期字符串的格式,默认为yyyy-MM-dd；Random.time() 返回一个随机的时间字符串
             artPat: Random.cword(2,8),

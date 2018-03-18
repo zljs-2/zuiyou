@@ -8,60 +8,22 @@
                 {{articleCell.uName}}
             </span>
         </section>
-        <section class="art_content ">
-            <section class="art_title flex-1" @click="">
+        <section class="art_content " @click="gotoAddress('/home/art')">
+            <section class="art_title flex-1" >
                 <p>{{articleCell.artTitle}}</p>
             </section>
-            <section class="art_img">
-                <section class="img_wrap" v-for="(artImg,key) in articleCell.artImg"
-                    :class="{
-                        flex_grow: (articleCell.artImg.length % 3) == 0 ? flag : !flag,
-                        oneImg: articleCell.artImg.length == 1 ? flag : !flag,
-                        twoImgs: articleCell.artImg.length == 2 ? flag : !flag
-                    }">
-                    <img  :src="artImg" alt="" class="img">
-                </section> 
-            </section>
+            <ImgCell
+                :artImgCell="articleCell.artImg">
+            </ImgCell>
         </section>
         <section class="art_pat">
             <span class="art_patContent">
                 {{articleCell.artPat}}
             </span>
         </section>
-        <section class="art_comment_wrap" @click="">
-            <section class="art_comment">
-                <section >
-                    <span class="art_commentContent">
-                        {{articleCell.artComment.Comment}}
-                    </span>
-                    <section class="art_img">
-                        <section class="img_wrap" v-for="(commentImg,key) in articleCell.artComment.CommentImg"
-                            :class="{
-                                flex_grow: (articleCell.artComment.CommentImg.length % 3) == 0 ? flag : !flag,
-                                oneImg: articleCell.artComment.CommentImg.length == 1 ? flag : !flag,
-                                twoImgs: articleCell.artComment.CommentImg.length == 2 ? flag : !flag
-                            }">
-                        <img  :src="commentImg" alt="" class="img">
-                    </section>
-                </section>
-                </section>
-                <section class="comment_praise_wrap">
-                    <span class="comment_praise">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-tubiao103"></use>
-                        </svg>
-                    </span>
-                    <span class="comment_praiseNum">
-                        {{articleCell.artComment.CommentPraiseNum}}
-                    </span>
-                    <span class="comment_tread">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-tubiao104"></use>
-                        </svg>
-                    </span>
-                </section>
-            </section>
-        </section>
+        <ArtCommentCell
+            :articleCommentCell="articleCell.artComment">
+        </ArtCommentCell>
         <section class="art_bar" @click="">
             <section class="art_shareNum art_bar_item">
                 <svg class="icon art_bar_icon" aria-hidden="true">
@@ -69,7 +31,7 @@
                 </svg>
                 {{articleCell.artBar.shareNum}}
             </section>
-            <section class="art_commentNum art_bar_item">
+            <section class="art_commentNum art_bar_item" @click="gotoAddress('/home/art')">
                 <svg class="icon art_bar_icon" aria-hidden="true">
                     <use xlink:href="#icon-xiaoxi"></use>
                 </svg>
@@ -81,7 +43,9 @@
                         <use xlink:href="#icon-web-icon-1"></use>
                     </svg>
                 </span>
-                <span class="art_praiseNum">{{articleCell.artBar.artPraiseNum}}</span>
+                <span class="art_praiseNum">
+                    {{articleCell.artBar.artPraiseNum}}
+                </span>
                 <span class="art_praise art_praiseDown">
                     <svg class="icon art_bar_icon" aria-hidden="true">
                         <use xlink:href="#icon-web-icon-"></use>
@@ -92,14 +56,19 @@
     </article>
 </template>
 
-<script>
+<script scoped>
 // import timg from "@/assets/timg.jpg";
+import ArtCommentCell from "./ArtCommentCell"
+import ImgCell from './ImgCell'
 export default {
   name: "ArtCell",
   props: {
     articleCell: Object
   },
-
+  components: {
+    ArtCommentCell,
+    ImgCell
+  },
   computed: {},
   data() {
     return {
@@ -184,48 +153,8 @@ export default {
   line-height: 1.25rem;
   margin: 0.625rem;
 }
-.art_img {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  max-width: 100%;
-  min-width: 6.25rem;
-  min-height: 6.25rem;
-}
-.flex_grow {
-  flex-grow: 1;
-}
-.img_wrap {
-  order: 1;
-  box-sizing: border-box;
-  width: 6.25rem;
-  height: 6.25rem;
-  margin: 0.1875rem;
-  overflow: hidden;
-}
-.art_img .img {
-  box-sizing: border-box;
-  width: 12.5rem;
-  height: 12.5rem;
-}
-.art_img .oneImg {
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  flex-grow: 1;
-}
-.art_img .twoImgs {
-  flex-grow: 1;
-  box-sizing: border-box;
-  height: 9.375rem;
-}
-/*.art_content .art_img > moreImgs {
-  flex-grow: 1;
-  flex-shrink: 1;
-  width: 6.25rem;
-  height: 6.25rem;
-} */
+
+
 .art_pat {
   text-align: left;
   width: auto;
@@ -243,42 +172,6 @@ export default {
   padding: 0.1875rem 0.625rem;
 }
 
-.art_comment_wrap {
-  text-align: left;
-  width: auto;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  background-color: #ecebeb;
-  border-radius: 0.625rem;
-  margin: 0.9375rem 0.625rem 0 0.625rem;
-  padding: 0.625rem;
-}
-.art_comment_wrap > .art_comment {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-.art_comment > .comment_praise_wrap {
-  position: absolute;
-  top: -2.1875rem;
-  right: -0.625rem;
-  background-color: #ecebeb;
-  padding: 0.3125rem 0.9375rem;
-  border-radius: 0.623rem 0.623rem 0 0;
-  color: dodgerblue;
-}
-.art_comment > .comment_praise_wrap::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: -0.3125rem;
-  display: block;
-  width: 1.25rem;
-  height: 1.875rem;
-  background-color: #ecebeb;
-  border-radius: 0.625rem 0 0 0;
-  transform: rotateZ(30deg);
-}
 .art_bar {
   width: auto;
   height: 1.875rem;
