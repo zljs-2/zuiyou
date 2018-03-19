@@ -21,7 +21,7 @@ export function fetch(url, params) {
   return new Promise((resolve, reject) => {
     axios.post(url, params)
       .then(response => {
-        console.log(response.config.data)
+        // console.log(response.config.data)
         resolve(response.data);
       })
       .catch((error) => {

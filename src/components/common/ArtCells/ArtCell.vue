@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .art_item {
   width: 100%;
   margin: 0 auto;

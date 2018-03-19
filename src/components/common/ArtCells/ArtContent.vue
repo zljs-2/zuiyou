@@ -8,7 +8,7 @@
                 {{artContentCell.uName}}
             </span>
         </section>
-        <section class="art_content " @click="gotoAddress('/art?id='+artContentCell.artIndex)">
+        <section class="art_content " @click="gotoAddress('/art?id='+artContentCell.artIndex);clickArt(artContentCell.artIndex)">
             <section class="art_title flex-1" >
                 <p>{{artContentCell.artTitle}}</p>
             </section>
@@ -27,6 +27,7 @@
 
 <script>
 import ImgCell from "./ImgCell";
+import bus from '@/components/bus.js'
 export default {
   components: {
     ImgCell
@@ -38,6 +39,9 @@ export default {
     return {};
   },
   methods: {
+    clickArt: function(index){
+      bus.$emit("ArtIndex",index)
+    },
     gotoAddress(path) {
       // 传入需要跳转路由名称
       this.$router.push(path); // 跳转到指定路由
@@ -46,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .user {
   display: flex;
   flex-direction: row;

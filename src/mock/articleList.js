@@ -6,9 +6,9 @@ const Random = Mock.Random;
 // const produceArtList = function() {
     let produceArtList = {};
     let articles = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 1; i <= 10; i++) {
         let newArticleObject = {
-            artIndex: i+1,
+            artIndex: i,
             artTitle: Random.csentence(5, 30), //  Random.csentence( min, max )
             uPhoto: Random.dataImage('100x100', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
             artImg: [], 
@@ -16,7 +16,7 @@ const Random = Mock.Random;
             date: Random.date() + ' ' + Random.time(), // Random.date()指示生成的日期字符串的格式,默认为yyyy-MM-dd；Random.time() 返回一个随机的时间字符串
             artPat: Random.cword(2,8),
             artComment:{
-                artIndex: i+1,
+                artIndex: i,
                 Comment: Random.csentence(2,40),
                 CommentImg: [],
                 CommentPraiseNum: Random.natural( 1, 30000 ),
@@ -24,7 +24,7 @@ const Random = Mock.Random;
                 CommentPraiseDownIcon:'#icon-iconset0435'
             },
             artBar: {
-                artIndex: i+1,
+                artIndex: i,
                 shareNum: Random.natural( 1, 1000 ),
                 shareIcon: '#icon-msnui-share',
                 artCommentNum: Random.natural( 1, 20000 ),
@@ -54,7 +54,7 @@ const Random = Mock.Random;
 
 // Mock.mock( url, post/get , 返回的数据)；
 Mock.mock('/home/artList', 'post', produceArtList);
-Mock.mock('/art?id=1', 'post', produceArtList.articles);
+Mock.mock('/art?id=', 'post', produceArtList);
 
 
 

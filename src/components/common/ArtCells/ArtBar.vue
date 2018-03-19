@@ -30,7 +30,7 @@
         </section>
 </template>
 
-<script>
+<script >
 export default {
     props:{
         artBarCell: Object
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .art_bar {
   width: auto;
   height: 1.875rem;

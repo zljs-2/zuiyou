@@ -27,14 +27,11 @@ export default {
     };
   },
   methods: {
-    gotoAddress(path) {
-      // 传入需要跳转路由名称
-      this.$router.push(path); // 跳转到指定路由
-    },
+    
     getArtList: function() {
       axios.zuiyou_artList('/home/artList')
         .then(res => {
-          console.log(res);
+          // console.log(res);
           this.articlesList = res.articles;
         })
     }
