@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <section id="foot_guid" >
+    <section id="foot_guid" v-if="artHome">
       <section
           v-for="(item,index) in order" 
             :index="index" 
@@ -22,6 +22,33 @@
           </section>
       </section>
     </section>
+    <form action="" v-if="perArt">
+            <section id="foot_guid" >
+                <section class="guid_item" >
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yuyin"></use>
+                        </svg>    
+                    </span>
+                </section>
+                <section class="guid_item guid_item_i" >
+                    <label for="">
+                        <input type="text" >
+                    </label>
+                </section>
+                <section class="guid_item guid_item_s guid_item_img" @click="getimg();">
+                    <input type="file" accept="image/*" id="imgBtn">
+                    <span>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-tupian"></use>
+                        </svg>
+                    </span>
+                </section>
+                <section class="guid_item" >
+                    <button type="submit"  class="sendBtn">发送</button>
+                </section>
+            </section>
+        </form>
     </footer>
 </template>
 <script>
@@ -34,35 +61,35 @@ export default {
       order: [
         {
           icon: "#icon-shuaxin",
-          chooseIcon:'',
+          chooseIcon: "",
           name: "最右",
           toPath: "/home",
           isChoose: false
         },
         {
           icon: "#icon-tupian1",
-          chooseIcon:'icon-tupiantianchong',
+          chooseIcon: "icon-tupiantianchong",
           name: "跟拍",
           toPath: "/pat",
           isChoose: false
         },
         {
           icon: "#icon-huojian",
-          chooseIcon:'icon-huojian1',
+          chooseIcon: "icon-huojian1",
           name: "话题",
           toPath: "/topic",
           isChoose: false
         },
         {
           icon: "#icon-xiaoxi",
-          chooseIcon:'icon-xiaoxi1',
+          chooseIcon: "icon-xiaoxi1",
           name: "消息",
           toPath: "/message",
           isChoose: false
         },
         {
           icon: "#icon-wodeweixuanzhong",
-          chooseIcon:'icon-wodexuanzhong',
+          chooseIcon: "icon-wodexuanzhong",
           name: "我的",
           toPath: "/profile",
           isChoose: false
@@ -70,27 +97,21 @@ export default {
       ]
     };
   },
-
+  props: {
+    artHome: Boolean,
+    perArt: Boolean
+  },
   methods: {
     gotoAddress: function(path) {
       // 传入需要跳转路由名称
       this.$router.push(path); // 跳转到指定路由
-    },
-    // chooseTag: function(index) {
-    //   console.log(this.order[index].isChoose)
-    //   this.order[index].isChoose = this.isActive;
-    //   console.log(this.order[index].isChoose)
-    // }
-  },
-
+    }
+  }
 };
 </script>
 
 <style>
 footer {
-  /* position: fixed;
-  bottom: 0;
-  left: 0; */
   width: 100%;
   height: 3.125rem;
   background-color: #fff;
@@ -107,7 +128,6 @@ footer {
   border-top: 1px solid #ece9e9;
 }
 .guid_item {
-  /* border: 1px solid #ccc; */
   text-align: center;
   line-height: 3.125rem;
   order: 0;
@@ -150,5 +170,56 @@ footer {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+/* /************************************************************* */
+/* #foot_guid {
+  height: 3.125rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-top: 1px solid #ece9e9;
+  align-items: center;
+}
+.guid_item {
+  text-align: center;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  flex-grow: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: center;
+  box-sizing: border-box;
+} */
+.icon {
+  font-size: 1.5rem;
+}
+#imgBtn {
+  display: none;
+}
+.guid_item_i {
+  flex-grow: 2;
+}
+.guid_item_i input {
+  width: 98%;
+  height: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-size: 1.125rem;
+  border-radius: 0.1875rem;
+}
+.guid_item_img .icon {
+  font-size: 1.75rem;
+}
+.sendBtn {
+  width: 80%;
+  height: 50%;
+  border: none;
+  color: #fff;
+  font: 400 0.875rem "mocroslft yahei";
+  text-align: center;
+  border-radius: 0.1875rem;
+  background-color: rgb(43, 135, 211);
 }
 </style>

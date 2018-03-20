@@ -1,7 +1,6 @@
 <template>
   <header>
-    <section id="searchWrap">
-      
+    <section id="searchWrap" v-if="artHome">
       <label for="search" id="search_icon">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-klmsousuo"></use>
@@ -16,8 +15,35 @@
         </svg>
       </span>
     </section>
+    <section id="artTitleWrap" v-if="perArt">
+      <span class="back common" @click="$router.go(-1)">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-fanhui"></use>
+        </svg>
+      </span>
+      <span class="artTitle">
+        帖子详情
+      </span>
+      <span id="edit" class="common">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-gengduo"></use>
+        </svg>
+      </span>
+    </section>
   </header>
 </template>
+<script>
+export default {
+  data(){
+    return {}
+  },
+  props: {
+    artHome: Boolean, 
+    perArt: Boolean
+  }
+}
+</script>
+
 <style>
 header {
   /* position: fixed;
@@ -76,6 +102,24 @@ header {
   line-height: 1.625rem;
   font-size: 1.375rem;
   color: dodgerblue;
+  width: 2.5rem /* 40/16 */;
+}
+/* ************************************************************ */
+#artTitleWrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  justify-content:space-between;
+}
+#artTitleWrap .artTitle {
+  height: 2.5rem /* 50/16 */;
+  flex-grow:1;
+}
+#artTitleWrap .common {
+  font-size: 1.375rem;
+  color: rgb(143, 143, 143);
   width: 2.5rem /* 40/16 */;
 }
 </style>

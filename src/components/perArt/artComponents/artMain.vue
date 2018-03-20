@@ -1,7 +1,11 @@
 <template>
   <section class="art_main">
-      <ArtContent :artContentCell="articles" ></ArtContent>
-      <ArtBar :artBarCell="articles.artBar"></ArtBar>
+    <section class="perArticle">
+        <ArtContent :artContentCell="articles" ></ArtContent>
+        <ArtBar :artBarCell="articles.artBar"></ArtBar>
+    </section>
+      
+    <ArtCommentList :comments="articles.artComments"></ArtCommentList>
       
   </section>
 </template>
@@ -10,43 +14,40 @@
 import bus from '@/components/bus.js'
 import axios from "@/axios/api.js";
 import ArtContent from "@/components/common/ArtCells/ArtContent";
+import ArtCommentList from './artComment/artComment'
 import ArtBar from "@/components/common/ArtCells/ArtBar";
 export default {
   components: {
     ArtContent,
+    ArtCommentList,
     ArtBar
   },
-  computed: {},
   data() {
     return {
       articles: {
-        artBar: {
-          // artCommentNum: 6086,
-          // artIndex: 1,
-          // artPraiseDownIcon: "#icon-web-icon-",
-          // artPraiseNum: 1418,
-          // artPraiseUpIcon: "#icon-web-icon-1",
-          // commentIcon: "#icon-xiaoxi2",
-          // shareIcon: "#icon-msnui-share",
-          // shareNum: 308
-        }
-      }
+        artBar: {},
+        artComments:[]
+      },
+      artIndex:1
     };
   },
   created() {
+    this.setIndex();
     this.getArt();
   },
   methods: {
-    getArt: function() {
-      let artIndex = 0;
+    setIndex:function(){
       bus.$on('ArtIndex',(data) => {
         console.log("data:",data)
-        artIndex = data;
+        this.artIndex = data;
       })
-      axios.zuiyou_art("/art?id="+artIndex).then(res => {
-        // console.log("res:", res);
-        this.articles = res.articles[1];
+    },
+    getArt: function() {
+      axios.zuiyou_art("/art?id="+this.artIndex).then(res => {
+        console.log("res:", res);
+        this.articles = res;
       });
+      
     }
   }
 };
@@ -60,14 +61,17 @@ export default {
 .art_main {
   width: 100%;
   margin: 0 auto;
-  border-bottom: 0.5rem solid #ecebeb;
   display: flex;
   flex-direction: column;
   -webkit-box-orient: vertical;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   text-align: left;
-  box-sizing: border-box;
+}
+.art_main .perArticle {
   padding: 0 0.3125rem;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 0.5rem solid #ecebeb;
 }
 </style>

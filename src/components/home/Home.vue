@@ -1,10 +1,10 @@
 <template>
   <section id="home" class="flex flex-v">
-      <headTop></headTop>
+      <headTop :perArt="perArt" :artHome="artHome"></headTop>
       <section class=" art flex-1 flex-align-center flex-pack-center flex-pack-justify">
         <articles></articles>
       </section>
-      <footerButton></footerButton>
+      <footerButton :perArt="perArt" :artHome="artHome"></footerButton>
   </section>
 </template>
 
@@ -15,7 +15,11 @@ import footerButton from "../common/Footer";
 
 export default {
   data() {
-    return {};
+    return {
+      artHome: true,
+      perArt: false,
+      
+    };
   },
   components: {
     headTop,
@@ -25,7 +29,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 * {
   padding: 0;
   margin: 0;
@@ -114,4 +118,8 @@ flex-pack-justify：子元素两端对齐
   -ms-flex-pack: justify;
   justify-content: space-between;
 } 
+
+.art_comment_wrap.art_comment_wrap_home{
+  background-color: #ecebeb;
+}
 </style>

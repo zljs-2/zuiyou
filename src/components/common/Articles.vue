@@ -52,5 +52,7 @@ export default {
   box-sizing: border-box;
 }
 
-
+.art_comment_wrap.art_comment_wrap_home{
+  background-color: #ecebeb;
+}
 </style>

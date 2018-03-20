@@ -1,5 +1,5 @@
 <template>
-  <section class="art_comment_wrap" @click="gotoAddress('/art?id='+articleCommentCell.artIndex)">
+  <section class="art_comment_wrap art_comment_wrap_home art_comment_wrap_per">
             <section class="art_comment">
                 <section >
                     <span class="art_commentContent">
@@ -29,14 +29,15 @@
 </template>
 
 <script>
-import ImgCell from './ImgCell'
+import ImgCell from "./ImgCell";
 export default {
   name: "ArtCommentCell",
   components: {
     ImgCell
   },
   props: {
-    articleCommentCell: Object
+    articleCommentCell: Object,
+
   },
   data() {
     return {
@@ -52,17 +53,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .art_comment_wrap {
   text-align: left;
   width: auto;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  background-color: #ecebeb;
   border-radius: 0.625rem;
   margin: 0.9375rem 0.625rem 0 0.625rem;
   padding: 0.625rem;
 }
+
+
 .art_comment_wrap > .art_comment {
   position: relative;
   top: 0;
@@ -78,9 +80,13 @@ export default {
   background-color: #ecebeb;
   padding: 0.3125rem 0.9375rem;
   border-radius: 0.623rem 0.623rem 0 0;
+
   color: dodgerblue;
 }
-.art_comment > .comment_praise_wrap::before {
+.art_comment > .comment_praise_wrap .icon {
+  font-size: 0.875rem;
+}
+/* .art_comment > .comment_praise_wrap::before {
   content: " ";
   position: absolute;
   top: 0;
@@ -91,5 +97,5 @@ export default {
   background-color: #ecebeb;
   border-radius: 0.625rem 0 0 0;
   transform: rotateZ(30deg);
-}
+} */
 </style>

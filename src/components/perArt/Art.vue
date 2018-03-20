@@ -1,18 +1,20 @@
 <template>
+<!-- <transition>  -->
     <section class="artWrap flex flex-v">
-        <ArtHeader></ArtHeader>
+        <ArtHeader :perArt="perArt" :artHome="artHome"></ArtHeader>
         <section class=" artBody flex-1 flex-align-center flex-pack-center flex-pack-justify">
-            <ArtMain></ArtMain>
+            <ArtMain :perArt="perArt"></ArtMain>
         </section>
-        <ArtFooter></Artfooter>
+        <ArtFooter :perArt="perArt" :artHome="artHome"></Artfooter>
     </section>
+<!-- </transition> -->
 </template>
 
-<script>
+<script >
 
-import ArtHeader from "./artComponents/artHeader";
+import ArtHeader from "@/components/common/Header";
 import ArtMain from "./artComponents/artMain";
-import ArtFooter from "./artComponents/artFooter";
+import ArtFooter from "@/components/common/Footer";
 export default {
   components: {
     ArtHeader,
@@ -21,6 +23,8 @@ export default {
   },
   data(){
     return {
+      artHome: false,
+      perArt: true
     }
   }
 };
