@@ -1,5 +1,5 @@
 <template>
-  <section class="art_comment_wrap art_comment_wrap_home art_comment_wrap_per">
+  <section class="art_comment_wrap " >
             <section class="art_comment">
                 <section >
                     <span class="art_commentContent">
@@ -36,12 +36,11 @@ export default {
     ImgCell
   },
   props: {
-    articleCommentCell: Object,
-
+    articleCommentCell: Object
   },
   data() {
     return {
-      flag: true
+      flag: true,
     };
   },
   methods: {
@@ -73,17 +72,16 @@ export default {
 .art_comment .art_img {
   padding: 0.3125rem;
 }
-.art_comment > .comment_praise_wrap {
+.art_comment  .comment_praise_wrap {
   position: absolute;
   top: -2.1875rem;
   right: -0.625rem;
-  background-color: #ecebeb;
   padding: 0.3125rem 0.9375rem;
   border-radius: 0.623rem 0.623rem 0 0;
 
   color: dodgerblue;
 }
-.art_comment > .comment_praise_wrap .icon {
+.art_comment  .comment_praise_wrap .icon {
   font-size: 0.875rem;
 }
 /* .art_comment > .comment_praise_wrap::before {

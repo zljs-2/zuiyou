@@ -1,7 +1,7 @@
 <template>
     <article class="art_item">
         <ArtContent :artContentCell="articleCell"></ArtContent>
-        <ArtCommentCell :articleCommentCell="articleCell.artGodComment"></ArtCommentCell>
+        <ArtCommentCell class="art_item_comment" :articleCommentCell="articleCell.artGodComment"></ArtCommentCell>
         <ArtBar :artBarCell="articleCell.artBar"></ArtBar>
     </article>
 </template>
@@ -39,7 +39,13 @@ export default {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
 }
-
+.art_item_comment{
+  background-color: #ecebeb;
+}
+.art_item_comment .comment_praise_wrap {
+  background-color: #ecebeb;
+    
+}
 /* .art_comment_wrap {
   text-align: left;
   width: auto;

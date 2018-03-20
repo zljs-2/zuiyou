@@ -1,7 +1,7 @@
 <template>
   <section id="art_warp">
       <section id="art">
-          <article v-for="(item,index) in articlesList" :index="index">
+          <article class="per_art" v-for="(item,index) in articlesList" :index="index">
             <ArtCell
               :articleCell="item"
               :index="index">
@@ -50,9 +50,7 @@ export default {
 #art {
   width: 100%;
   box-sizing: border-box;
+  
 }
 
-.art_comment_wrap.art_comment_wrap_home{
-  background-color: #ecebeb;
-}
 </style>

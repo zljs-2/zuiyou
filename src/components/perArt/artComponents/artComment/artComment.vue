@@ -1,6 +1,7 @@
 <template>
-    <article class="per_art_comments">
-        <section v-for="(item,index) in comments" >
+    <article class="per_art_comment_list">
+        <section id="per_art_comment_head"></section>
+        <section v-for="(item,index) in comments" class="per_art_comment">
             <ArtCommentCell 
                 :articleCommentCell="item" 
                 :index ="index">
@@ -25,7 +26,11 @@ export default {
 </script>
 
 <style >
-.art_comment_wrap.art_comment_wrap_per{
+#per_art_comment_head{
+    height: 2.5rem /* 40/16 */;
+}
+.per_art_comment{
   border-top: 1px solid rgb(228, 228, 228);
 }
+
 </style>
