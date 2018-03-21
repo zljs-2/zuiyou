@@ -51,6 +51,7 @@ export default {
 </script>
 
 <style scoped>
+
 .user {
   display: flex;
   flex-direction: row;

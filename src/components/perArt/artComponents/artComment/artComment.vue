@@ -4,7 +4,9 @@
         <section v-for="(item,index) in comments" class="per_art_comment">
             <ArtCommentCell 
                 :articleCommentCell="item" 
-                :index ="index">
+                :index ="index" 
+                :artHome="artHome" 
+                :perArt="perArt">
             </ArtCommentCell>
         </section>
     </article>
@@ -17,7 +19,10 @@ export default {
         ArtCommentCell
     },
     data(){
-        return {}
+        return {
+            artHome:false,
+            perArt:true
+        }
     },
     props:{
         comments: Array
@@ -32,5 +37,4 @@ export default {
 .per_art_comment{
   border-top: 1px solid rgb(228, 228, 228);
 }
-
 </style>

@@ -119,7 +119,4 @@ flex-pack-justify：子元素两端对齐
   justify-content: space-between;
 } 
 
-.art_comment_wrap.art_comment_wrap_home{
-  background-color: #ecebeb;
-}
 </style>

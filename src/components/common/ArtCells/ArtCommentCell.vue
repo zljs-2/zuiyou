@@ -1,5 +1,9 @@
 <template>
-  <section class="art_comment_wrap " >
+  <section :class="{art_comment_wrap:true, 
+                    comment_back:artHome,
+                    
+                    
+                  }" >
             <section class="art_comment">
                 <section >
                     <span class="art_commentContent">
@@ -9,7 +13,9 @@
                         :artImgCell="articleCommentCell.CommentImg">
                     </ImgCell>
                 </section>
-                <section class="comment_praise_wrap">
+                <section :class="{comment_praise_wrap:true,
+                                  comment_back:artHome,
+                                }">
                     <span class="comment_praise">
                         <svg class="icon" aria-hidden="true">
                             <use :xlink:href="articleCommentCell.CommentPraiseUpIcon"></use>
@@ -36,7 +42,9 @@ export default {
     ImgCell
   },
   props: {
-    articleCommentCell: Object
+    articleCommentCell: Object,
+    artHome:Boolean,
+    perArt:Boolean
   },
   data() {
     return {
@@ -80,6 +88,10 @@ export default {
   border-radius: 0.623rem 0.623rem 0 0;
 
   color: dodgerblue;
+}
+.comment_back {
+  background-color: #ecebeb;
+    
 }
 .art_comment  .comment_praise_wrap .icon {
   font-size: 0.875rem;

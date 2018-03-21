@@ -1,7 +1,7 @@
 <template>
     <article class="art_item">
         <ArtContent :artContentCell="articleCell"></ArtContent>
-        <ArtCommentCell class="art_item_comment" :articleCommentCell="articleCell.artGodComment"></ArtCommentCell>
+        <ArtCommentCell class="art_item_comment" :articleCommentCell="articleCell.artGodComment" :artHome="artHome" :perArt="perArt"></ArtCommentCell>
         <ArtBar :artBarCell="articleCell.artBar"></ArtBar>
     </article>
 </template>
@@ -23,12 +23,15 @@ export default {
     ArtBar
   },
   data() {
-    return {};
+    return {
+      artHome: true,
+      perArt: false,
+    };
   }
 };
 </script>
 
-<style scoped>
+<style >
 .art_item {
   width: 100%;
   margin: 0 auto;
@@ -39,13 +42,8 @@ export default {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
 }
-.art_item_comment{
-  background-color: #ecebeb;
-}
-.art_item_comment .comment_praise_wrap {
-  background-color: #ecebeb;
-    
-}
+
+
 /* .art_comment_wrap {
   text-align: left;
   width: auto;
