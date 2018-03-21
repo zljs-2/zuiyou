@@ -2,7 +2,8 @@
     <article class="art_item">
         <ArtContent 
             :ContentCell="articleCell" 
-            :isContent="isContent">
+            :isContent="isContent"
+            :artHome="artHome">
         </ArtContent>
         <ArtPat 
             :articlePatCell="articleCell.artPat">

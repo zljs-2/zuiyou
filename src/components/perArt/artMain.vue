@@ -3,7 +3,8 @@
     <section class="perArticle">
         <ArtContent 
             :ContentCell="articles" 
-            :isContent="isContent">
+            :isContent="isContent"
+            :perArt="perArt">
         </ArtContent>
         <ArtBar :artBarCell="articles.artBar"></ArtBar>
     </section>
@@ -30,6 +31,7 @@ export default {
   data() {
     return {
       isContent:true,
+      perArt: true,
       articles: {
         artBar: {},
         artComments:[]

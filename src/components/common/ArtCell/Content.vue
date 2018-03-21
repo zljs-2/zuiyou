@@ -12,15 +12,18 @@
                     <span class="uName flex-1 flex-align-start">
                       {{ContentCell.name}}
                     </span>
-                    <span>
+                    <span v-if="perArt">
                       {{ContentCell.createTime}}
                     </span>
                   </section>
                 </section>
-                <span class="btn">
+                <span class="btn" v-if="artHome">
                     <svg class="icon" aria-hidden="true">
                       <use xlink:href="#icon-msnui-close"></use>
                     </svg>
+                </span>
+                <span class="btn" v-if="perArt">
+                    关注
                 </span>
             </section>
             
