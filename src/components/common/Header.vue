@@ -16,7 +16,7 @@
       </span>
     </section>
     <section id="artTitleWrap" v-if="perArt">
-      <span class="back common" @click="$router.go(-1)">
+      <span class="back common" @click="$router.push('/home')">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-fanhui"></use>
         </svg>

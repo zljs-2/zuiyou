@@ -1,11 +1,16 @@
 <template>
   <section class="art_main">
     <section class="perArticle">
-        <ArtContent :artContentCell="articles" ></ArtContent>
+        <ArtContent 
+            :ContentCell="articles" 
+            :isContent="isContent">
+        </ArtContent>
         <ArtBar :artBarCell="articles.artBar"></ArtBar>
     </section>
       
-    <ArtCommentList :comments="articles.artComments"></ArtCommentList>
+    <ArtCommentList 
+        :comments="articles.artComments">
+    </ArtCommentList>
       
   </section>
 </template>
@@ -13,7 +18,7 @@
 <script>
 import bus from '@/components/bus.js'
 import axios from "@/axios/api.js";
-import ArtContent from "@/components/common/ArtCell/ArtContent";
+import ArtContent from "@/components/common/ArtCell/Content";
 import ArtCommentList from './artComment/artComment'
 import ArtBar from "@/components/common/ArtCell/ArtBar";
 export default {
@@ -24,6 +29,7 @@ export default {
   },
   data() {
     return {
+      isContent:true,
       articles: {
         artBar: {},
         artComments:[]

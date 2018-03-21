@@ -1,15 +1,29 @@
 <template>
     <article class="art_item">
-        <ArtContent :artContentCell="articleCell"></ArtContent>
-        <ArtCommentCell class="art_item_comment" :articleCommentCell="articleCell.artGodComment" :artHome="artHome" :perArt="perArt"></ArtCommentCell>
+        <ArtContent 
+            :ContentCell="articleCell" 
+            :isContent="isContent">
+        </ArtContent>
+        <ArtPat 
+            :articlePatCell="articleCell.artPat">
+        </ArtPat>
+        <ArtCommentCell 
+            class="art_item_comment" 
+            :isCommentList="isCommentList" 
+            :ContentCell="articleCell.artGodComment" 
+            :isComment="isComment">
+        </ArtCommentCell>
+        
         <ArtBar :artBarCell="articleCell.artBar"></ArtBar>
     </article>
 </template>
 
 <script >
-import ArtContent from '@/components/common/ArtCell/ArtContent'
+import ArtContent from '@/components/common/ArtCell/Content'
+// import ArtContent from '@/components/common/ArtCell/ArtContent'
+import ArtPat from '@/components/common/ArtCell/ArtPat'
 import ArtBar from '@/components/common/ArtCell/ArtBar'
-import ArtCommentCell from "@/components/common/ArtCell/ArtCommentCell"
+import ArtCommentCell from "@/components/common/ArtCell/Content"
 import ImgCell from '@/components/common/ArtCell/ImgCell'
 export default {
   // name: "ArtCell",
@@ -18,6 +32,7 @@ export default {
   },
   components: {
     ArtContent,
+    ArtPat,
     ArtCommentCell,
     ImgCell,
     ArtBar
@@ -25,7 +40,9 @@ export default {
   data() {
     return {
       artHome: true,
-      perArt: false,
+      isComment:true,
+      isCommentList:false,
+      isContent:true
     };
   }
 };
@@ -43,37 +60,10 @@ export default {
   -ms-flex-direction: column;
 }
 
+.art_item_comment{
+  box-sizing: border-box;
+  padding: .5rem /* 8/16 */;
 
-/* .art_comment_wrap {
-  text-align: left;
-  width: auto;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  background-color: #ecebeb;
-  border-radius: 0.625rem;
-  margin: 0.9375rem 0.625rem 0 0.625rem;
-  padding: 0.625rem;
 }
-.art_comment_wrap > .art_comment {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-.art_comment .art_img {
-  padding: 0.3125rem;
-}
-.art_comment > .comment_praise_wrap {
-  position: absolute;
-  top: -2.1875rem;
-  right: -0.625rem;
-  background-color: #ecebeb;
-  padding: 0.3125rem 0.9375rem;
-  border-radius: 0.623rem 0.623rem 0 0;
-
-  color: dodgerblue;
-}
-.art_comment > .comment_praise_wrap .icon {
-  font-size: 0.875rem;
-} */
 
 </style>

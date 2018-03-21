@@ -13,7 +13,7 @@
 <script >
 
 import ArtHeader from "@/components/common/Header";
-import ArtMain from "./artComponents/artMain";
+import ArtMain from "./artMain";
 import ArtFooter from "@/components/common/Footer";
 export default {
   components: {

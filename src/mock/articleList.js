@@ -19,11 +19,11 @@ Mock.mock('/art?id=1', 'post', produceArtList.articles[0]);
 function creatArt(i) {
   let newArticleObject = {
     artIndex: i,
-    artTitle: Random.csentence(5, 30), //  Random.csentence( min, max )
-    uPhoto: Random.dataImage('100x100', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
-    artImg: [],
-    uName: Random.cname(), // Random.cname() 随机生成一个常见的中文姓名
-    date: Random.date() + ' ' + Random.time(), // Random.date()指示生成的日期字符串的格式,默认为yyyy-MM-dd；Random.time() 返回一个随机的时间字符串
+    contentTitle: Random.csentence(5, 30), //  Random.csentence( min, max )
+    photo: Random.dataImage('100x100', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
+    createTime:Random.date('MM/dd'),
+    Img: [],
+    name: Random.cname(), // Random.cname() 随机生成一个常见的中文姓名
     artPat: Random.cword(2, 8),
     artGodComment:{},
     artComments: [],
@@ -39,7 +39,7 @@ function creatArt(i) {
     }
   }
   getComment(newArticleObject);
-  getImg(newArticleObject.artImg);
+  getImg(newArticleObject.Img);
   
   return newArticleObject;
 }
@@ -48,17 +48,18 @@ function getComment(obj){
     let artCommentNum = Random.natural(1, 9);
     for (let i = 1; i <= artCommentNum; i++) {
       let artComment = {
-        artIndex: i,
-        godComment:false,
-        Comment: Random.csentence(2, 40),
-        CommentImg: [],
-        CommentPraiseNum: Random.natural(1, 30000),
-        CommentPraiseUpIcon: '#icon-iconset0436',
-        CommentPraiseDownIcon: '#icon-iconset0435'
-      }
+            artIndex: i,
+            photo: Random.dataImage('100x100', 'mock的图片'),
+            createTime:Random.date('MM/dd'),
+            name: Random.cname(),
+            contentTitle: Random.csentence(2, 40),
+            Img: [],
+            CommentPraiseNum: Random.natural(1, 30000),
+            CommentPraiseUpIcon: '#icon-iconset0436',
+            CommentPraiseDownIcon: '#icon-iconset0435'
+          }
   
-      getImg(artComment.CommentImg);
-
+      getImg(artComment.Img);
       obj.artComments.push(artComment);
     }
     obj.artGodComment = obj.artComments[0];
