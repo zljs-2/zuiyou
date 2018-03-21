@@ -13,9 +13,9 @@
 <script>
 import bus from '@/components/bus.js'
 import axios from "@/axios/api.js";
-import ArtContent from "@/components/common/ArtCells/ArtContent";
+import ArtContent from "@/components/common/ArtCell/ArtContent";
 import ArtCommentList from './artComment/artComment'
-import ArtBar from "@/components/common/ArtCells/ArtBar";
+import ArtBar from "@/components/common/ArtCell/ArtBar";
 export default {
   components: {
     ArtContent,

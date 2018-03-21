@@ -13,7 +13,7 @@
 
 <script>
 import axios from "@/axios/api.js";
-import ArtCell from "./ArtCells/ArtCell";
+import ArtCell from "./ArtCell";
 export default {
   components: {
     ArtCell

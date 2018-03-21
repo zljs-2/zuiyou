@@ -7,10 +7,10 @@
 </template>
 
 <script >
-import ArtContent from './ArtContent'
-import ArtBar from './ArtBar'
-import ArtCommentCell from "./ArtCommentCell"
-import ImgCell from './ImgCell'
+import ArtContent from '@/components/common/ArtCell/ArtContent'
+import ArtBar from '@/components/common/ArtCell/ArtBar'
+import ArtCommentCell from "@/components/common/ArtCell/ArtCommentCell"
+import ImgCell from '@/components/common/ArtCell/ImgCell'
 export default {
   // name: "ArtCell",
   props: {

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ArtCommentCell from "@/components/common/ArtCells/ArtCommentCell"
+import ArtCommentCell from "@/components/common/ArtCell/ArtCommentCell"
 export default {
     components: {
         ArtCommentCell

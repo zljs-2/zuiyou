@@ -10,7 +10,7 @@
 
 <script>
 import headTop from "../common/Header";
-import articles from "../common/Articles";
+import articles from "./arts/Articles";
 import footerButton from "../common/Footer";
 
 export default {
