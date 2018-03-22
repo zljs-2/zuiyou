@@ -74,9 +74,9 @@ export default {
     ContentCell: Object,
     artHome: Boolean,
     perArt: Boolean,
-    isContent:Boolean,
-    isComment:Boolean,
-    isCommentList:Boolean
+    isContent: Boolean,
+    isComment: Boolean,
+    isCommentList: Boolean
   },
   data() {
     return {};
@@ -161,10 +161,7 @@ export default {
   font-size: 0.875rem;
 } */
 
-
-
-
-#art .art_content {
+/* #art .art_content {
   margin: 0 0.625rem;
   display: flex;
   flex-direction: column;
@@ -178,6 +175,5 @@ export default {
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin: 0.625rem;
-}
-
+} */
 </style>

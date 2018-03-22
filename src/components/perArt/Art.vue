@@ -1,12 +1,14 @@
 <template>
 <!-- <transition>  -->
-    <section class="artWrap flex flex-v">
+  <keep-alive>
+      <section class="artWrap flex flex-v">
         <ArtHeader :perArt="perArt" :artHome="artHome"></ArtHeader>
         <section class=" artBody flex-1 flex-align-center flex-pack-center flex-pack-justify">
             <ArtMain :perArt="perArt"></ArtMain>
         </section>
         <ArtFooter :perArt="perArt" :artHome="artHome"></Artfooter>
     </section>
+  </keep-alive>
 <!-- </transition> -->
 </template>
 

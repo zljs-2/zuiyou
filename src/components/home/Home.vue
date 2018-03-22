@@ -1,11 +1,13 @@
 <template>
-  <section id="home" class="flex flex-v">
+<keep-alive>
+    <section id="home" class="flex flex-v">
       <headTop :perArt="perArt" :artHome="artHome"></headTop>
       <section class=" art flex-1 flex-align-center flex-pack-center flex-pack-justify">
         <articles></articles>
       </section>
       <footerButton :perArt="perArt" :artHome="artHome"></footerButton>
   </section>
+</keep-alive>
 </template>
 
 <script>
